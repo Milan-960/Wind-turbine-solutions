@@ -1,0 +1,10 @@
+@use '_variables.scss' as *;
+
+@use './components/index.scss' as *;
+
+#root {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}

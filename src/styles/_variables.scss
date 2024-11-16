@@ -1,0 +1,38 @@
+// Colors
+$primary-color: #01579b;
+$secondary-color: #4fc3f7;
+$text-color: #555;
+$light-text-color: #78909c;
+$background-light: #f9f9f9;
+$background-dark: #e3f2fd;
+$border-color: #ddd;
+$box-shadow-light: rgba(0, 0, 0, 0.1);
+$box-shadow-dark: rgba(0, 0, 0, 0.2);
+$font-family-base: 'Arial', sans-serif;
+
+// Layout Sizes
+$max-width: 1280px;
+
+// Font Sizes
+$font-size-small: 0.85rem;
+$font-size-default: 1rem;
+$font-size-medium: 1.5rem;
+$font-size-large: 1.8rem;
+
+// Spacing
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 20px;
+
+// Border Radius
+$border-radius-small: 6px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+
+// Box Shadows
+$box-shadow-subtle: 0 2px 6px $box-shadow-light;
+$box-shadow-prominent: 0 4px 8px $box-shadow-dark;
+
+// Responsive Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
