@@ -23,8 +23,6 @@ const App = () => {
     coordinates?.lon || 0
   );
 
-  console.log('🚀 ~ App ~ data:', data);
-
   const handleCoordinatesSubmit = (lat: number, lon: number) => {
     setCoordinates({ lat, lon });
   };
@@ -55,6 +53,17 @@ const App = () => {
 
           {/* Chart and Table */}
           <section className="chart-table-container">
+            {/* 
+             Comment out the following line to show only
+             the first 12 hours of data in the chart and 
+             the first 2 days in the table. 
+             */}
+            {/* <WindDataChart hourlyData={data.hourly.slice(0, 12)} />
+            <WindDataTable
+              dailyData={data.daily.slice(0, 2)}
+              timezone={data.timezone}
+            /> */}
+
             <WindDataChart hourlyData={data.hourly} />
             <WindDataTable dailyData={data.daily} timezone={data.timezone} />
           </section>
