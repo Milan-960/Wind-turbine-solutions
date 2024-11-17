@@ -4,6 +4,34 @@
 
 The **Wind Turbine Planner** is a React-based application designed to help plan maintenance activities for wind turbines by leveraging real-time wind data. The application fetches and displays wind speed, direction, and other weather-related metrics for the next two days. Users can input the coordinates of their turbines and visualize the data through intuitive charts, tables, and interactive maps.
 
+ <details>
+   <summary>screen shorts and the example of the App.</summary>
+   <br>
+   This is how input form.
+   <pre>
+   <img src='./public/home.png' width="100%" alt="disable" />
+   </pre>
+
+   <br>
+   This is how map and weather data is shown.
+   <pre>
+   <img src='./public/map-weather.png' width="100%" alt="disable" />
+   </pre>
+
+   <br>
+   This is how our wind chart is shown.
+   <pre>
+   <img src='./public/wind-chart.png' width="100%" alt="disable" />
+   </pre>
+
+   <br>
+   This is how our wind data is shown.
+   <pre>
+   <img src='./public/wind-table.png' width="100%" alt="disable" />
+   </pre>
+
+</details>
+
 ---
 
 ### Features
