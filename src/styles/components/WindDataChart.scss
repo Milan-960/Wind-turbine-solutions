@@ -1,0 +1,59 @@
+@use '../variables' as *;
+
+// Chart Section
+.chart-section {
+  margin: $spacing-large 0;
+  padding: $spacing-medium;
+  background-color: $background-light;
+  border-radius: $border-radius-large;
+  box-shadow: $box-shadow-prominent;
+  font-family: $font-family-base;
+}
+
+// Chart Overview
+.chart-overview {
+  text-align: center;
+  margin-bottom: $spacing-medium;
+
+  h2 {
+    font-size: $font-size-large;
+    color: $primary-color;
+    font-weight: bold;
+    margin-bottom: $spacing-small;
+  }
+
+  p {
+    font-size: $font-size-default;
+    color: $text-color;
+    margin: 0;
+  }
+}
+
+// Chart Container
+.chart-container {
+  position: relative;
+  height: 400px;
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-medium;
+  padding: $spacing-medium;
+  box-shadow: $box-shadow-subtle;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 300px;
+    padding: $spacing-small;
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-mobile) {
+  .chart-overview {
+    h2 {
+      font-size: $font-size-medium;
+    }
+
+    p {
+      font-size: $font-size-small;
+    }
+  }
+}

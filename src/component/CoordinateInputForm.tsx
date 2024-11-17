@@ -5,6 +5,12 @@ interface CoordinateInputProps {
   onSubmit: (lat: number, lon: number) => void;
 }
 
+/*
+ * This component is responsible for taking user input for latitude and longitude
+ * and validating the input before submitting it to the parent component.
+ * It uses the coordinateSchema to validate the input.
+ ! If the input is invalid, it displays an error message.
+ */
 export const CoordinateInputForm: React.FC<CoordinateInputProps> = ({
   onSubmit,
 }) => {

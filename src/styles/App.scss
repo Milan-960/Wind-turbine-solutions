@@ -2,9 +2,55 @@
 
 @use './components/index.scss' as *;
 
-#root {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 2rem;
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Center content vertically and horizontally */
+  min-height: 200px; /* Ensures the loader has enough space */
+  font-family: $font-family-base;
+  color: $primary-color;
+
+  svg {
+    font-size: 2rem; /* Size of the loading icon */
+    animation: spin 1s linear infinite; /* Rotating animation */
+    margin-bottom: $spacing-small;
+  }
+
+  p {
+    font-size: $font-size-medium;
+    font-weight: bold;
+  }
+}
+
+/* Loading Icon Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $background-light;
+  padding: $spacing-medium;
+  border: 1px solid $error-color;
+  border-radius: $border-radius-medium;
+  box-shadow: $box-shadow-subtle;
+  margin: $spacing-large auto;
+  max-width: 400px;
   text-align: center;
+
+  .error-message {
+    font-family: $font-family-base;
+    color: $error-color;
+    font-size: $font-size-default;
+    font-weight: bold;
+  }
 }
