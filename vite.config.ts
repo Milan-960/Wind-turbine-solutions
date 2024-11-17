@@ -13,6 +13,13 @@ export default defineConfig({
     sourcemap: true,
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+        },
+      },
+    },
     chunkSizeWarningLimit: 600, // Adjust the limit if necessary
   },
   css: {
