@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions, ChartData } from 'chart.js';
-import '../utils/chart';
+import '../utils/Chart';
 
 interface WindChartProps {
   hourlyData: Array<{ dt: number; wind_speed: number; wind_gust: number }>;
