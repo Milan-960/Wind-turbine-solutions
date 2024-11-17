@@ -56,8 +56,7 @@ const App = () => {
           {/* Chart and Table */}
           <section className="chart-table-container">
             <WindDataChart hourlyData={data.hourly} />
-
-            <WindDataTable dailyData={data.daily} />
+            <WindDataTable dailyData={data.daily} timezone={data.timezone} />
           </section>
         </section>
       )}
