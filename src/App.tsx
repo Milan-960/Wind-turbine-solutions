@@ -23,7 +23,6 @@ const App = () => {
     coordinates?.lon || 0
   );
 
-  console.log('🚀 ~ App ~ coordinates:', coordinates);
   console.log('🚀 ~ App ~ data:', data);
 
   const handleCoordinatesSubmit = (lat: number, lon: number) => {
@@ -58,7 +57,7 @@ const App = () => {
           <section className="chart-table-container">
             <WindDataChart hourlyData={data.hourly} />
 
-            <WindDataTable />
+            <WindDataTable dailyData={data.daily} />
           </section>
         </section>
       )}

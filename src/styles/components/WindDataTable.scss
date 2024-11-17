@@ -1,0 +1,135 @@
+@use '../variables' as *;
+
+// Wind Table Section
+.wind-table-section {
+  margin: $spacing-large 0;
+  background-color: $background-light;
+  border-radius: $border-radius-medium;
+  box-shadow: $box-shadow-prominent;
+}
+
+// Table Overview
+.table-overview {
+  margin-bottom: $spacing-large;
+  padding: $spacing-medium;
+
+  h2 {
+    font-size: $font-size-large;
+    font-weight: bold;
+    margin-bottom: $spacing-small;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: $font-size-default;
+    color: $text-color;
+    margin: 0;
+  }
+}
+
+// Responsive Table Container
+.responsive-table-container {
+  overflow-x: auto;
+  border-radius: $border-radius-medium;
+  box-shadow: $box-shadow-subtle;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    height: $spacing-small;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: $border-radius-small;
+
+    &:hover {
+      background: $primary-color-dark;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $border-color;
+  }
+}
+
+// General Table Styles
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  cursor: pointer;
+
+  th,
+  td {
+    padding: $spacing-small;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    background-color: $background-dark;
+    font-weight: bold;
+    box-shadow: 0 2px 5px $box-shadow-light;
+  }
+
+  td {
+    background-color: #fff;
+    border: 1px solid $border-color;
+  }
+
+  tr:hover {
+    background-color: $background-light;
+    transition: background-color 0.3s ease;
+  }
+
+  // Highlight the entire column on hover
+  tr:hover td:nth-child(n) {
+    background-color: $background-dark;
+  }
+}
+
+// Highlight only sticky column on hover
+// .responsive-table tr:hover .sticky-column {
+//   background-color: $background-dark;
+// }
+
+// Sticky Column Styling
+.sticky-column {
+  position: sticky;
+  left: 0;
+  background-color: $background-dark;
+  z-index: 10;
+  box-shadow: 2px 0 5px $box-shadow-light;
+  border-right: 2px solid $border-color;
+
+  &:hover {
+    background-color: $background-dark;
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-tablet) {
+  .responsive-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-medium;
+    box-shadow: $box-shadow-prominent;
+    background-color: #fff;
+  }
+
+  .responsive-table {
+    width: 100%;
+  }
+
+  .sticky-column {
+    background-color: #fff;
+    box-shadow: 2px 0 5px $box-shadow-dark;
+  }
+
+  th {
+    z-index: 11;
+    top: 0;
+    left: 2px;
+  }
+}
