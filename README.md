@@ -112,6 +112,30 @@ The **Wind Turbine Planner** is a React-based application designed to help plan 
 - npm run preview: Preview the production build locally.
 - npm run lint: Run ESLint to check for code quality issues.
 
+#### API Reference
+
+1. The application uses the One Call 3.0 API from OpenWeatherMap:
+
+   - Endpoint: https://api.openweathermap.org/data/3.0/onecall
+   - Required Parameters:
+     - lat: Latitude of the location
+     - lon: Longitude of the location
+     - exclude: Data blocks to exclude (e.g., minutely,alerts)
+     - units: Units of measurement (metric for °C, m/s)
+     - appid: Your API key
+   - Response: JSON with weather data (current, hourly, daily).
+
+#### Future Enhancements
+
+- Add caching for API responses to reduce redundant network requests. consider using tanstack/react-query.
+- Add additional visualizations (e.g., heatmaps).
+- Add darkmode, lung support, dashboard, login, sign up and many more..
+- Support for multiple turbine locations with a saved list feature.
+- Enhance Map Interaction:
+- Allow users to click on the map to select coordinates.
+- Use memoization (React.memo) for components like WindChart to avoid unnecessary re-renders.
+- Implement unit tests for critical components and hooks.
+
 ### Disable JS
 
 In case of if the javascript is disable on the users browser we show this message check this out on the below IMG:

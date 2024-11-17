@@ -1,4 +1,5 @@
 import React from 'react';
+import { convertUnixTimeToLocalTime } from '../utils';
 
 interface WindTableProps {
   dailyData: Array<{
@@ -12,9 +13,13 @@ interface WindTableProps {
     sunrise: number;
     sunset: number;
   }>;
+  timezone: string;
 }
 
-export const WindDataTable: React.FC<WindTableProps> = ({ dailyData }) => (
+export const WindDataTable: React.FC<WindTableProps> = ({
+  dailyData,
+  timezone,
+}) => (
   <div
     className="wind-table-section"
     data-testid="wind-table"
@@ -51,7 +56,10 @@ export const WindDataTable: React.FC<WindTableProps> = ({ dailyData }) => (
           {dailyData.map((day) => (
             <tr key={day.dt}>
               <td className="sticky-column">
-                {new Date(day.dt * 1000).toLocaleDateString()}
+                {convertUnixTimeToLocalTime(day.dt, timezone, {
+                  includeDate: true,
+                  includeTime: false,
+                })}
               </td>
               <td>{day.wind_speed}</td>
               <td>{day.wind_deg}</td>
@@ -59,17 +67,13 @@ export const WindDataTable: React.FC<WindTableProps> = ({ dailyData }) => (
               <td>{day.temp.day}</td>
               <td>{day.pressure}</td>
               <td>
-                {new Date(day.sunrise * 1000).toLocaleTimeString([], {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  hour12: true,
+                {convertUnixTimeToLocalTime(day.sunrise, timezone, {
+                  timeOnly: true,
                 })}
               </td>
               <td>
-                {new Date(day.sunset * 1000).toLocaleTimeString([], {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  hour12: true,
+                {convertUnixTimeToLocalTime(day.sunset, timezone, {
+                  timeOnly: true,
                 })}
               </td>
               <td>{day.summary}</td>

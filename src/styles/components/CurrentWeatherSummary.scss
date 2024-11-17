@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: $direction;
   align-items: center;
-  justify-content: center;
 }
 
 // General Styles
@@ -23,11 +22,30 @@
 
 // Title
 .weather-title {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-large;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-medium;
   color: $primary-color;
+
+  // Icon Styling
+  .weather-icon {
+    font-size: $font-size-large;
+    margin-right: $spacing-small;
+    color: $secondary-color;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $primary-color-dark;
+    }
+  }
 }
 
 // Weather Grid
@@ -109,14 +127,18 @@
 }
 
 // Responsive Design
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-mobile) {
   .current-weather-summary {
     max-width: 100%;
     margin: 20px 0;
   }
 
   .weather-title {
-    font-size: 1.5rem;
+    font-size: $font-size-medium;
+
+    .weather-icon {
+      font-size: $font-size-medium;
+    }
   }
 
   .weather-card {
