@@ -16,6 +16,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          leaflet: ['leaflet', 'leaflet-control-geocoder'],
+          chartjs: ['chart.js', 'react-chartjs-2'],
           react: ['react', 'react-dom'],
         },
       },

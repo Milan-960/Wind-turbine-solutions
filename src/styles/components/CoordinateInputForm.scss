@@ -1,0 +1,85 @@
+@use '../variables.scss' as *;
+
+// Coordinate Input Styles
+.coordinate-input {
+  background-color: $background-light;
+  border-radius: $border-radius-medium;
+  margin: $spacing-large auto;
+  padding: $spacing-medium;
+  box-shadow: $box-shadow-prominent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: $spacing-large;
+
+  label {
+    font-weight: bold;
+    margin-bottom: $spacing-small;
+    text-align: start;
+    color: $text-color;
+  }
+
+  input {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-small;
+    padding: $spacing-small $spacing-medium;
+    font-size: $font-size-default;
+    transition: border-color 0.3s ease;
+    background: none;
+    color: $text-color;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}
+
+// Error Styles
+.error-input {
+  border-color: $error-color;
+  box-shadow: 0 0 $spacing-small rgba(255, 0, 0, 0.5);
+}
+
+.error-message {
+  color: $error-color; // Uses the error color variable
+  font-weight: bold;
+  font-size: $font-size-small;
+  text-align: start;
+  margin: 0;
+}
+
+// Button Styles
+button[type='submit'] {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius-small;
+  padding: $spacing-small $spacing-medium * 2;
+  font-size: $font-size-default;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color-dark;
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-mobile) {
+  .coordinate-input {
+    padding: $spacing-small;
+  }
+
+  button[type='submit'] {
+    padding: $spacing-small $spacing-medium;
+    font-size: $font-size-small;
+  }
+}

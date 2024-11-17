@@ -1,0 +1,141 @@
+@use '../variables' as *;
+
+// Mixin for Flexbox Centering
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// General Styles
+.current-weather-summary {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  box-shadow: 0 6px 12px $box-shadow-light;
+  font-family: $font-family-base;
+  @include flex-center(column);
+  flex-grow: 1;
+}
+
+// Title
+.weather-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $primary-color;
+}
+
+// Weather Grid
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+// Weather Card
+.weather-card {
+  @include flex-center(row);
+  padding: 6px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+  box-shadow:
+    4px 4px 8px $box-shadow-light,
+    -4px -4px 8px rgba(255, 255, 255, 0.7);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 15px $box-shadow-dark;
+
+    .weather-icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Weather Icons
+.weather-icon {
+  font-size: 36px;
+  color: $secondary-color;
+  margin-right: 12px;
+  transition: transform 0.2s;
+}
+
+// Labels
+.weather-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #37474f;
+  margin: 0;
+}
+
+// Values
+.weather-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #455a64;
+  margin: 0;
+
+  small {
+    font-size: 0.8rem;
+    color: #78909c;
+  }
+}
+
+// Map-Weather Container
+.map-weather-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px auto;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+
+  > * {
+    background-color: $background-light;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px $box-shadow-light;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .current-weather-summary {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .weather-title {
+    font-size: 1.5rem;
+  }
+
+  .weather-card {
+    padding: 10px;
+  }
+
+  .weather-icon {
+    font-size: 32px;
+  }
+
+  .weather-label {
+    font-size: 0.85rem;
+  }
+
+  .weather-value {
+    font-size: 0.9rem;
+  }
+
+  .map-weather-container {
+    grid-template-columns: 1fr;
+  }
+}
