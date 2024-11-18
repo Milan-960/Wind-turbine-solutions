@@ -30,7 +30,7 @@ export default tseslint.config(
       ], // Warn but allow unused variables
       '@typescript-eslint/ban-ts-comment': 'off', // Allow TypeScript comments like @ts-ignore
       '@typescript-eslint/explicit-module-boundary-types': 'off', // Allow implicit return types
-      'no-console': 'warn', // Warn on console usage, but allow it
+      'no-console': ['error', { allow: ['warn', 'error'] }], // Allow only warnings and errors
     },
   }
 );
