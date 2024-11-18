@@ -169,3 +169,9 @@ The **Wind Turbine Planner** is a React-based application designed to help plan 
 In case of if the javascript is disable on the users browser we show this message check this out on the below IMG:
 
 <img src='./public/DisableJS.png' width="100%" alt="disable" />
+
+### Build Timing
+
+This img shows the build time of the application in small chunks:
+
+<img src='./public/build_time.png' width="100%" alt="build_time" />

@@ -7,6 +7,11 @@ interface WindChartProps {
   hourlyData: Array<{ dt: number; wind_speed: number; wind_gust: number }>;
 }
 
+/*
+ * A chart component that visualizes hourly wind speed and gust data.
+ * @param hourlyData - An array of hourly wind data objects.
+ * @returns - A line chart displaying wind speed and gust trends.
+ */
 export const WindDataChart: React.FC<WindChartProps> = ({ hourlyData }) => {
   // Handle cases where there is no data
   if (!hourlyData || hourlyData.length === 0) {
