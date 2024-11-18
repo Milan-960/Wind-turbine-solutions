@@ -53,14 +53,14 @@ body {
 /* Media Queries */
 @media (max-width: $breakpoint-mobile) {
   .main-layout {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
 @media (max-width: $breakpoint-tablet) {
   .main-layout {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
