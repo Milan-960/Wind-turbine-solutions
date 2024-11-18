@@ -81,6 +81,12 @@ const ReverseGeocode: React.FC<{
   return null;
 };
 
+/*
+ * This component renders a map with a marker at the given coordinates
+ * @param param0 - lat, lon
+ * @returns JSX.Element - A map with a marker at the given coordinates
+ * @see Ex: https://react-leaflet.js.org/docs/api-map
+ */
 export const TurbineMap: React.FC<TurbineMapProps> = ({ lat, lon }) => {
   const [zoomLevel, setZoomLevel] = useState(13); // Default zoom level
   const [locationName, setLocationName] = useState<string>('Fetching...');

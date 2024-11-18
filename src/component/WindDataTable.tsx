@@ -16,6 +16,12 @@ interface WindTableProps {
   timezone: string;
 }
 
+/*
+ * A table component that displays daily wind data.
+ * @param dailyData - An array of daily wind data objects.
+ * @param timezone - The timezone for the data.
+ * @returns - A table displaying wind metrics for each day.
+ */
 export const WindDataTable: React.FC<WindTableProps> = ({
   dailyData,
   timezone,
