@@ -1,13 +1,13 @@
-name: Develop Pipeline
+name: master Pipeline
 
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   test-and-build:
-    name: Develop Run Tests and Build
+    name: Master Run Tests and Build
     runs-on: ubuntu-latest
 
     steps:
