@@ -12,6 +12,7 @@ on:
       - 'docs/**'
       - '.gitignore'
 
+# Define the jobs that run in the pipeline workflow
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -43,3 +44,11 @@ jobs:
       # Step 5: Build the application
       - name: Build Application
         run: npm run build
+
+      # Step 6: Verify build output
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then 
+            echo "Build output directory 'dist' not found!"
+            exit 1 
+          fi
