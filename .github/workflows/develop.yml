@@ -4,7 +4,17 @@ on:
   push:
     branches:
       - develop
+  pull_request:
+    branches:
+      - develop
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test-and-build:
     name: Develop Run Tests and Build
