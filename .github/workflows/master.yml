@@ -1,0 +1,35 @@
+name: master Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-and-build:
+    name: Master Run Tests and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Run unit tests
+      - name: Run Unit Tests
+        run: npm run test:ci
+
+      # Step 5: Build the application
+      - name: Build Application
+        run: npm run build

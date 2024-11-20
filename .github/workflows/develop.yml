@@ -1,0 +1,54 @@
+name: Develop Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+
+# Define the jobs that run in the pipeline workflow
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test-and-build:
+    name: Develop Run Tests and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Run unit tests
+      - name: Run Unit Tests
+        run: npm run test:ci
+
+      # Step 5: Build the application
+      - name: Build Application
+        run: npm run build
+
+      # Step 6: Verify build output
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then 
+            echo "Build output directory 'dist' not found!"
+            exit 1 
+          fi
